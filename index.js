@@ -43,7 +43,7 @@ app.use(morgan("dev"));
 app.use(cookieParser());
 
 const corsOptions = {
-  origin: "https://zainabkhan87.github.io",
+  origin: "https://zainabkhan87.github.io/mern-ecommerce-project",
   methods: ["GET", "POST", "PUT", "DELETE", "OPTIONS"],
   credentials: true,
 };
