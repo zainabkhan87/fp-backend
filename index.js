@@ -32,6 +32,12 @@ mongoose
   )
   .catch((err) => console.log("Database Not Connected !!!", err));
 
+  // Default route for the root path
+app.get("/", (req, res) => {
+  res.send("Welcome to the API!"); // Or any custom message
+});
+
+
 // Middlewares
 app.use(morgan("dev"));
 app.use(cookieParser());
