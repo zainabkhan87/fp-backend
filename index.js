@@ -18,17 +18,13 @@ const customizeRouter = require("./src/routes/customize");
 // Auth Middleware
 const { loginCheck } = require("./src/middleware/auth");
 
-// Create uploads folder if not exists
-const CreateAllFolder = require("./src/config/uploadFolderCreateScript");
-CreateAllFolder();
+// ⚠️ REMOVE CreateAllFolder() because Vercel cannot create folders
+// const CreateAllFolder = require("./src/config/uploadFolderCreateScript");
+// CreateAllFolder();
 
 // Database Connection
 mongoose
-  .connect(process.env.DATABASE, {
-    // useNewUrlParser: true,
-    //useUnifiedTopology: true,
-     //useCreateIndex: true,
-  })
+  .connect(process.env.DATABASE)
   .then(() =>
     console.log(
       "==============Mongodb Database Connected Successfully=============="
@@ -52,10 +48,11 @@ app.use("/api/product", productRouter);
 app.use("/api", brainTreeRouter);
 app.use("/api/order", orderRouter);
 app.use("/api/customize", customizeRouter);
-// Start Server
-const PORT = process.env.PORT || 8000;
-app.listen(PORT, () => {
-  console.log("Server is running on", PORT);
-});
 
-module.exports= app
+// ❌ REMOVE app.listen()
+// const PORT = process.env.PORT || 8000;
+// app.listen(PORT, () => {
+//   console.log("Server is running on", PORT);
+// });
+
+module.exports = app; // ✅ Just export app
