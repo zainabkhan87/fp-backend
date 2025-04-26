@@ -48,7 +48,8 @@ const corsOptions = {
   credentials: true,
 };
 
-app.use(cors(corsOptions)); // ✅ Apply cors correctly
+app.use(cors());
+// ✅ Apply cors correctly
 
 
 
