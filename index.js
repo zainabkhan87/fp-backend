@@ -41,10 +41,17 @@ app.get("/", (req, res) => {
 // Middlewares
 app.use(morgan("dev"));
 app.use(cookieParser());
+
 const corsOptions = {
-  origin: ["https://zainabkhan87.github.io"], // ✅ Allow your frontend
-  credentials: true, // ✅ Allow cookies, auth headers
+  origin: "https://zainabkhan87.github.io",
+  methods: ["GET", "POST", "PUT", "DELETE", "OPTIONS"],
+  credentials: true,
 };
+
+app.use(cors(corsOptions)); // ✅ Apply cors correctly
+
+
+
 
 app.use(cors(corsOptions));
 app.use(express.static("public"));
