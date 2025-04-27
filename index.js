@@ -43,7 +43,7 @@ app.use(morgan("dev"));
 app.use(cookieParser());
 
 const allowedOrigins = [
-  "https://zainabkhan87.github.io",
+  "https://zainabkhan87.github.io/mern-ecommerce-project",
   "http://localhost:3000", // if you want local dev also
 ];
 
