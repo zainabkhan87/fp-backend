@@ -42,11 +42,11 @@ app.get("/", (req, res) => {
 app.use(morgan("dev"));
 app.use(cookieParser());
 
-const corsOptions = {
-  origin: "https://zainabkhan87.github.io/mern-ecommerce-project",
-  methods: ["GET", "POST", "PUT", "DELETE", "OPTIONS"],
-  credentials: true,
-};
+// const corsOptions = {
+//   origin: "https://zainabkhan87.github.io/mern-ecommerce-project",
+//   methods: ["GET", "POST", "PUT", "DELETE", "OPTIONS"],
+//   credentials: true,
+// };
 
 app.use(cors());
 // ✅ Apply cors correctly
@@ -54,7 +54,7 @@ app.use(cors());
 
 
 
-app.use(cors(corsOptions));
+//app.use(cors(corsOptions));
 app.use(express.static("public"));
 app.use(express.urlencoded({ extended: false }));
 app.use(express.json());
