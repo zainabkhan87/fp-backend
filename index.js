@@ -43,7 +43,7 @@ app.use(morgan("dev"));
 app.use(cookieParser());
 
 const allowedOrigins = [
-  "https://zainabkhan87.github.io/mern-ecommerce-project",
+  //"https://zainabkhan87.github.io/mern-ecommerce-project",
   "http://localhost:3000", // if you want local dev also
 ];
 
@@ -70,9 +70,9 @@ app.use("/api/order", orderRouter);
 app.use("/api/customize", customizeRouter);
 
 // ❌ REMOVE app.listen()
-// const PORT = process.env.PORT || 8000;
-// app.listen(PORT, () => {
-//   console.log("Server is running on", PORT);
-// });
+ const PORT = process.env.PORT || 8000;
+app.listen(PORT, () => {
+  console.log("Server is running on", PORT);
+ });
 
 module.exports = app; // ✅ Just export app
